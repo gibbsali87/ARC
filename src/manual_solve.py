@@ -10,14 +10,53 @@ import re
 ### result. Name them according to the task ID as in the three
 ### examples below. Delete the three examples. The tasks you choose
 ### must be in the data/training directory, not data/evaluation.
-def solve_6a1e5592(x):
+
+#Student Name: Arshad Ali
+#Student ID: 20236061
+
+def solve_0b148d64(x):
+    myList = []
+    newList = []
+    myList.append(x)
+    a = None
+    a1 = 0
+    b = None
+    b1 = 0
+    c = 0
+
+    for i in myList:
+        for j in i:
+            for k in j:
+                if a is None:
+                    a = k
+                elif k == a:
+                    a1 = a1 + 1
+                elif k == b:
+                    b1 = b1 + 1
+                elif k == c:
+                    c = c  # Do nothing
+                else:
+                    b = k
+    if a1 > b1:
+        g = a
+    else:
+        g = b
+    for i in myList:
+        for j in i:
+            for k in j:
+                if k != g:
+                    newList.append(k)
+                else:
+                    g = g  # DO Nothing
+    print(a1, b1, g)
+    print(newList)
     return x
 
-def solve_b2862040(x):
-    return x
+#def solve_b2862040(x):
+#    return x
 
-def solve_05269061(x):
-    return x
+#def solve_05269061(x):
+#    return x
 
 
 def main():
