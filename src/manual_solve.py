@@ -34,23 +34,25 @@ def solve_0b148d64(x):
                 elif k == b:
                     b1 = b1 + 1
                 elif k == c:
-                    c = c  # Do nothing
+                    pass  # Do nothing
                 else:
                     b = k
-    if a1 > b1:
-        g = a
+    if a1 < b1:
+        s = a
     else:
-        g = b
-    for i in myList:
-        for j in i:
-            for k in j:
-                if k != g:
-                    newList.append(k)
-                else:
-                    g = g  # DO Nothing
-    print(a1, b1, g)
-    print(newList)
-    return x
+        s = b
+    for i in x:
+        if s in i:
+            l = round(len(i) / 2)
+
+            if s in i[:l]:
+                newList.append(i[:l])
+            else:
+                newList.append(i[l:-1])
+
+    print(a1, b1, s)  # Print for troubleshooting remove before submit
+    print(newList)  # Print for troubleshooting remove before submit
+    return newList
 
 #def solve_b2862040(x):
 #    return x
