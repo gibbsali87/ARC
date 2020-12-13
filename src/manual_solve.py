@@ -32,8 +32,10 @@ def solve_0b148d64(x):
     for i in myList:
         for j in i:
             for k in j:
-                if a is None:
+                if a is None and b is None and k != 0:
                     a = k
+                elif b is None and k != a and k != 0:
+                    b = k
                 elif k == a:
                     a1 = a1 + 1
                 elif k == b:
@@ -41,7 +43,7 @@ def solve_0b148d64(x):
                 elif k == c:
                     pass  # Do nothing
                 else:
-                    b = k
+                    pass  # Do nothing
     if a1 < b1:
         s = a
     else:
