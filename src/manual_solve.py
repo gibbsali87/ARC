@@ -25,6 +25,7 @@ def solve_0b148d64(x):
     c = 0
     fIndex = 0
     lIndex = 0
+    f_index = []
     l_index = []
     lastList = []
 
@@ -54,17 +55,14 @@ def solve_0b148d64(x):
     #newList = newList.tolist()
     for i in newList:
         i = i.tolist()
-        fIndex = i.index(s)
-        if i.index(s) < fIndex:
-            fIndex = i.index(s)
-        else:
-            pass
+        f_index.append(i.index(s))
 
         rl = i[::-1]
         if rl.index(s) > lIndex:
             l_index.append(rl.index(s))
         else:
             pass
+    fIndex = min(f_index)
     lIndex = min(l_index)
     lIndex = lIndex * -1
 
@@ -77,7 +75,7 @@ def solve_0b148d64(x):
             lastList.append(i[fIndex:])
         else:
             lastList.append(i[fIndex:lIndex])
-    print(a1, b1, s)  # Print for troubleshooting remove before submit
+    print(a1, b1, s, a, b)  # Print for troubleshooting remove before submit
     print(lastList)  # Print for troubleshooting remove before submit
     return lastList
 
