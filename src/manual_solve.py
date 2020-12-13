@@ -15,6 +15,7 @@ import re
 
 #Student Name: Arshad Ali
 #Student ID: 20236061
+#GitHub Repo: https://github.com/gibbsali87/ARC
 
 def solve_0b148d64(x):
     myList = [x]
@@ -24,7 +25,6 @@ def solve_0b148d64(x):
     b = None
     b1 = 0
     c = 0
-    fIndex = 0
     lIndex = 0
     f_index = []
     l_index = []
@@ -69,17 +69,12 @@ def solve_0b148d64(x):
     lIndex = min(l_index)
     lIndex = lIndex * -1
 
-    print(fIndex)
-    print(lIndex)  # Print for troubleshooting remove before submit
-
     for i in newList:
         i = i.tolist()
         if lIndex == -1:
             lastList.append(i[fIndex:])
         else:
             lastList.append(i[fIndex:lIndex])
-    print(a1, b1, s, a, b)  # Print for troubleshooting remove before submit
-    print(lastList)  # Print for troubleshooting remove before submit
     return lastList
 
 def solve_0d3d703e(x):
@@ -96,16 +91,26 @@ def solve_0d3d703e(x):
             newList.append(s_list)
     return newList
 
+"""
+This solution requires filling the surrounding squares with the colour of the 
+corresponding square in the middle. There are two solution types required one 
+for 3 x 11 Grid and one for 7 x 11 grid. 
+The Approach I have taken is to store the colour square number and then create 
+a list of the corresponding colour that I can match from a dictionary 
+already created.
+"""
 def solve_54d9e175(x):
+    # Variables and Objects
     myList = [x]
     newList = []
     dic = {2: 7, 3: 8, 4: 9, 1: 6}
     ind = []
-    f_list = []
-
+    # Below nested for loops, extracts the number that I can match for the colour,
+    # and storing it in a list.
+    # Then I query the dictionary and assign the correct colour to a variable
+    # for later use.
     for i in myList:
         for j in i:
-            s_list = []
             for k in j:
                 if k == 0 or k == 5:
                     pass
@@ -114,13 +119,14 @@ def solve_54d9e175(x):
         first = dic.get(ind[0])
         second = dic.get(ind[1])
         third = dic.get(ind[2])
+        # Checking if 3x11 or 7x11 Grid is required.
         if len(x) > 3:
             fourth = dic.get(ind[3])
             fifth = dic.get(ind[4])
             sixth = dic.get(ind[5])
         else:
             pass
-
+        # Below nested while loops create the required output.
         while len(newList) < 3:
             s_list = []
             while len(s_list) < 3:
@@ -133,6 +139,7 @@ def solve_54d9e175(x):
                 s_list.append(third)
             newList.append(s_list)
 
+        # Checking if 3x11 or 7x11 Grid is required.
         if len(x) > 3:
 
             f_list = []
@@ -151,12 +158,8 @@ def solve_54d9e175(x):
                 while len(s_list) < 11:
                     s_list.append(sixth)
                 newList.append(s_list)
-                print(f'S list at end {s_list}')
         else:
             pass
-
-        print(f'ind {ind}')
-        print(newList)
     return newList
 
 def main():
