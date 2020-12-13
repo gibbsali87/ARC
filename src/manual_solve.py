@@ -92,43 +92,30 @@ def solve_0d3d703e(x):
                 k = dic.get(k)
                 s_list.append(k)
             newList.append(s_list)
-
     return newList
 
-def solve_d13f3404(x):
+def solve_6f8cd79b(x):
     myList = [x]
     newList = []
-
     for i in myList:
         for j in i:
-            s_list = []
-            j = j.tolist()
+            f_list = []
             for k in j:
-                s_list.append(k)
-            while len(s_list) != 6:
-                if len(newList) != 0:
-                #newList = newList.tolist()
-                    for m in newList:
-                      for o in m:
-                          if o != 0:
-                              print(f'Printing {m.index(o)}')
-                              ind = m.index(0)
-                          else:
-                              pass
-                      if m != 0:
-                          s_list.insert(ind, m)
-                          print(f'Printing {s_list}')
-                else:
-                    s_list.append(0)
+                #l = len(f_list)
+                y = 8
+                f_list.append(y)
+            newList.append(f_list)
+            l = len(j)
+    for i in newList:
+        ind = newList.index(i)
+        if ind != 0 or ind != -1:
+            j = 0
+            f_list.append(j)
+            newList.append(f_list)
 
-            else:
-                pass
-            newList.append(s_list)
+    print(f'myList {newList}')
 
-        print(f'mylist {newList}')  # Print for troubleshooting remove before submit
-
-    return x
-
+    return newList
 
 def main():
     # Find all the functions defined in this file whose names are
@@ -186,7 +173,6 @@ def test(taskID, solve, data):
     for x, y in zip(test_input, test_output):
         yhat = solve(x)
         show_result(x, y, yhat)
-
         
 def show_result(x, y, yhat):
     print("Input")
@@ -202,4 +188,3 @@ def show_result(x, y, yhat):
     print(np.all(y == yhat))
 
 if __name__ == "__main__": main()
-
