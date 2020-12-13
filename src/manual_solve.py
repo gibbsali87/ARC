@@ -54,7 +54,7 @@ def solve_0b148d64(x):
                 newList.append(i)
             else:
                 pass
-    #newList = newList.tolist()
+
     for i in newList:
         i = i.tolist()
         f_index.append(i.index(s))
@@ -81,8 +81,23 @@ def solve_0b148d64(x):
     print(lastList)  # Print for troubleshooting remove before submit
     return lastList
 
-#def solve_b2862040(x):
-#    return x
+def solve_0d3d703e(x):
+    myList = [x]
+    newList = []
+    dic = {3: 4, 1: 5, 2: 6, 8: 9, 5: 1, 6: 2, 9: 8, 4: 3}
+
+    for i in myList:
+
+        for j in i:
+            s_list = []
+            for k in j:
+                k = dic.get(k)
+                s_list.append(k)
+            newList.append(s_list)
+
+        print(f'mylist {newList}')
+
+    return newList
 
 #def solve_05269061(x):
 #    return x
