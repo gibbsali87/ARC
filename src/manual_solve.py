@@ -2,6 +2,8 @@
 
 import os, sys
 import json
+from typing import Optional
+
 import numpy as np
 import re
 
@@ -94,27 +96,67 @@ def solve_0d3d703e(x):
             newList.append(s_list)
     return newList
 
-def solve_6f8cd79b(x):
+def solve_54d9e175(x):
     myList = [x]
     newList = []
+    dic = {2: 7, 3: 8, 4: 9, 1: 6}
+    ind = []
+    f_list = []
+
     for i in myList:
         for j in i:
-            f_list = []
+            s_list = []
             for k in j:
-                #l = len(f_list)
-                y = 8
-                f_list.append(y)
-            newList.append(f_list)
-            l = len(j)
-    for i in newList:
-        ind = newList.index(i)
-        if ind != 0 or ind != -1:
-            j = 0
-            f_list.append(j)
-            newList.append(f_list)
+                if k == 0 or k == 5:
+                    pass
+                else:
+                    ind.append(k)
+        first = dic.get(ind[0])
+        second = dic.get(ind[1])
+        third = dic.get(ind[2])
+        if len(x) > 3:
+            fourth = dic.get(ind[3])
+            fifth = dic.get(ind[4])
+            sixth = dic.get(ind[5])
+        else:
+            pass
 
-    print(f'myList {newList}')
+        while len(newList) < 3:
+            s_list = []
+            while len(s_list) < 3:
+                s_list.append(first)
+            s_list.append(5)
+            while len(s_list) < 7:
+                s_list.append(second)
+            s_list.append(5)
+            while len(s_list) < 11:
+                s_list.append(third)
+            newList.append(s_list)
 
+        if len(x) > 3:
+
+            f_list = []
+            while len(f_list) < 11:
+                f_list.append(5)
+            newList.append(f_list[:12])
+
+            while len(newList) < 7:
+                s_list = []
+                while len(s_list) < 3:
+                    s_list.append(fourth)
+                s_list.append(5)
+                while len(s_list) < 7:
+                    s_list.append(fifth)
+                s_list.append(5)
+                while len(s_list) < 11:
+                    s_list.append(sixth)
+                newList.append(s_list)
+                print(f'S list at end {s_list}')
+        else:
+            pass
+
+        print(f'ind {ind}')
+        print(newList)
     return newList
 
 def main():
