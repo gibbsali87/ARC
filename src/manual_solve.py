@@ -16,7 +16,18 @@ import re
 #Student Name: Arshad Ali
 #Student ID: 20236061
 #GitHub Repo: https://github.com/gibbsali87/ARC
+"""
+In this solution, we have input data where one side of the data set is different from the rest. 
+However, it was effortless to see on the Visual website for a human. It was a bit of challenge to code 
+that but I enjoyed it.
+In the start, I took the approach of dividing the data into two sets and then take the set, 
+which including the solution. Although it did work for some fo the Grids it was not the right solution, 
+so I had to change my approach. Furthermore, I looked for the index where the data change started and ended. 
+This was a much better approach and solved all the Grids.
 
+In all of the solution, I have used pure python. I have used a dictionary in two of the three solutions.
+All the grids are returning True for the three solution solved.
+"""
 def solve_0b148d64(x):
     myList = [x]
     newList = []
@@ -30,6 +41,7 @@ def solve_0b148d64(x):
     l_index = []
     lastList = []
 
+    # For loop to extract the indexes where the change is starting and ending.
     for i in myList:
         for j in i:
             for k in j:
@@ -60,14 +72,14 @@ def solve_0b148d64(x):
         i = i.tolist()
         f_index.append(i.index(s))
 
-        rl = i[::-1]
+        rl = i[::-1]  # Reversing the list to get the last index where the data change has occurred.
         if rl.index(s) > lIndex:
             l_index.append(rl.index(s))
         else:
             pass
     fIndex = min(f_index)
     lIndex = min(l_index)
-    lIndex = lIndex * -1
+    lIndex = lIndex * -1  # Multiplying by -1 as I had reverse the list to get the last index
 
     for i in newList:
         i = i.tolist()
@@ -76,12 +88,18 @@ def solve_0b148d64(x):
         else:
             lastList.append(i[fIndex:lIndex])
     return lastList
-
+"""
+The output required in this solution is exchanging the index with a corresponding 
+number that represents the corresponding colour.
+The Approach I have taken is to store the colour values in a Dictionary 
+and then replace it as required to form the correct output.
+"""
 def solve_0d3d703e(x):
     myList = [x]
     newList = []
     dic = {3: 4, 1: 5, 2: 6, 8: 9, 5: 1, 6: 2, 9: 8, 4: 3}
-
+    # Nested for loop to exchange the current value with corresponding value
+    # with the help of already created dictionary.
     for i in myList:
         for j in i:
             s_list = []
