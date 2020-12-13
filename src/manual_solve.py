@@ -15,9 +15,8 @@ import re
 #Student ID: 20236061
 
 def solve_0b148d64(x):
-    myList = []
+    myList = [x]
     newList = []
-    myList.append(x)
     a = None
     a1 = 0
     b = None
@@ -87,7 +86,6 @@ def solve_0d3d703e(x):
     dic = {3: 4, 1: 5, 2: 6, 8: 9, 5: 1, 6: 2, 9: 8, 4: 3}
 
     for i in myList:
-
         for j in i:
             s_list = []
             for k in j:
@@ -95,12 +93,41 @@ def solve_0d3d703e(x):
                 s_list.append(k)
             newList.append(s_list)
 
-        print(f'mylist {newList}')
-
     return newList
 
-#def solve_05269061(x):
-#    return x
+def solve_d13f3404(x):
+    myList = [x]
+    newList = []
+
+    for i in myList:
+        for j in i:
+            s_list = []
+            j = j.tolist()
+            for k in j:
+                s_list.append(k)
+            while len(s_list) != 6:
+                if len(newList) != 0:
+                #newList = newList.tolist()
+                    for m in newList:
+                      for o in m:
+                          if o != 0:
+                              print(f'Printing {m.index(o)}')
+                              ind = m.index(0)
+                          else:
+                              pass
+                      if m != 0:
+                          s_list.insert(ind, m)
+                          print(f'Printing {s_list}')
+                else:
+                    s_list.append(0)
+
+            else:
+                pass
+            newList.append(s_list)
+
+        print(f'mylist {newList}')  # Print for troubleshooting remove before submit
+
+    return x
 
 
 def main():
