@@ -23,6 +23,10 @@ def solve_0b148d64(x):
     b = None
     b1 = 0
     c = 0
+    fIndex = 0
+    lIndex = 0
+    l_index = []
+    lastList = []
 
     for i in myList:
         for j in i:
@@ -43,16 +47,39 @@ def solve_0b148d64(x):
         s = b
     for i in x:
         if s in i:
-            l = round(len(i) / 2)
-
-            if s in i[:l]:
-                newList.append(i[:l])
+            if s in i:
+                newList.append(i)
             else:
-                newList.append(i[l:-1])
+                pass
+    #newList = newList.tolist()
+    for i in newList:
+        i = i.tolist()
+        fIndex = i.index(s)
+        if i.index(s) < fIndex:
+            fIndex = i.index(s)
+        else:
+            pass
 
+        rl = i[::-1]
+        if rl.index(s) > lIndex:
+            l_index.append(rl.index(s))
+        else:
+            pass
+    lIndex = min(l_index)
+    lIndex = lIndex * -1
+
+    print(fIndex)
+    print(lIndex)  # Print for troubleshooting remove before submit
+
+    for i in newList:
+        i = i.tolist()
+        if lIndex == -1:
+            lastList.append(i[fIndex:])
+        else:
+            lastList.append(i[fIndex:lIndex])
     print(a1, b1, s)  # Print for troubleshooting remove before submit
-    print(newList)  # Print for troubleshooting remove before submit
-    return newList
+    print(lastList)  # Print for troubleshooting remove before submit
+    return lastList
 
 #def solve_b2862040(x):
 #    return x
