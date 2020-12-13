@@ -64,3 +64,9 @@ When your output grid is ready, click the green "Submit!" button to check your a
 After you've obtained the correct answer for the current test input grid, you can switch to the next test input grid for the task using the "Next test input" button (if there is any available; most tasks only have one test input).
 
 When you're done with a task, use the "load task" button to open a new task.
+
+### Random Solution in Python
+
+solve_manual.py in the src folder has three random solution solved.
+It's a very interesting project and although much easier for humna to understand it takes something to convert that understanding to python code.
+Looking forward to practice with some more examples. And possibly plot the solutions with Matplotlib to create the amazing plots that are shown in the html file.
